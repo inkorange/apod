@@ -1,0 +1,219 @@
+@import '../stylesheets/variables';
+
+.AppHeader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:100;
+    @media (max-width: $small) {
+        height: 44px;
+    }
+    &:before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 44px;
+        background-color: $blue;
+        border-bottom: 4px solid $yellow;
+        content: '';
+        transition: .4s box-shadow;
+        box-shadow: 0 0 0 0 rgba(0,0,0,0);
+    }
+    &.open {
+        &:before {
+            box-shadow: 0 0 2000px 500px rgba(0, 0, 0, .65);
+        }
+    }
+
+
+    .content {
+        max-width: $maxPageWidth;
+        position: relative;
+        margin: 0 auto;
+        z-index: 2;
+        .logo {
+            position: absolute;
+            width: 165px;
+            margin-top: $baseMargin*2;
+            margin-left: $baseMargin;
+            transition: .5s all;
+            padding-left: $basePadding;
+            @media (max-height: $xsmallH) {
+                width: 125px;
+            }
+            img {
+                width: 100%;
+                z-index:2;
+                position: relative;
+            }
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: $basePadding;
+                height: 81.25%;
+                background: rgba(255,255,255,.6);
+                box-shadow: 0px 60px 100px 0 white inset;
+                z-index:1;
+            }
+        }
+        .tagline {
+            padding: 0;
+            margin: 0;
+            font-size: 1.4rem;
+            color: $blue;
+            text-transform: uppercase;
+        }
+
+        ul {
+            float: right;
+            list-style: none;
+            line-height: 40px;
+            padding: 0;
+            margin: 0 $baseMargin 0 0;
+            li {
+                padding: 0 $basePadding;
+                display: inline-block;
+                color: white;
+                font-size: 1.3rem;
+                font-weight: 300;
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+            @media (max-width: $small) {
+                display: none;
+                margin: 0;
+            }
+
+            @media (max-width: $small) {
+                transition: .5s all;
+                display: block;
+                background: #1E2F3A;
+                width: calc(100vw - 200px);
+                @media (max-width: $xsmall) {
+                    width: 100vw;
+                }
+                padding: 0 $basePadding*2 $basePadding*2 $basePadding*2;
+                z-index: 1;
+                li {
+                    display: block;
+                    text-align: right;
+                    border-bottom: 1px solid white;
+                    margin: 0 $baseMargin*6 0 0;
+                    padding: $basePadding;
+                }
+                &.open {
+                    margin-top: 44px;
+                    margin-right: 0%;
+                    //box-shadow: 0 80px 200px 50px rgba(0,0,0,.8);
+                }
+                &.closed {
+                    margin-top: 44px;
+                    margin-right: -100%;
+                    //box-shadow: 0 0px 200px rgba(0,0,0,0);
+                }
+
+            }
+        }
+
+        .Menu {
+            position: absolute;
+            right: $baseMargin*1.5;
+            top: $baseMargin*1.5;
+            display: none;
+            @media (max-width: $small) {
+                display: block;
+            }
+            > img {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 50px;
+                background-color: rgba(0,0,0,.5);
+                border-radius: 50%;
+                box-shadow: 0 2px 5px rgba(0,0,0,.5);
+                transition: all .75s;
+                &[data-name='menu'] {
+                    opacity: 1;
+                }
+                &[data-name='close'] {
+                    opacity: 0;
+                    box-shadow: none;
+                    background-color: rgba(0,0,0,0);
+                }
+            }
+            &.open {
+                img {
+                    transform: rotateZ(270deg);
+                    &[data-name='close'] {
+                        opacity: 1;
+                    }
+                    &[data-name='menu'] {
+                        opacity: 0;
+                    }
+
+                    > svg {
+
+                    }
+                }
+            }
+        }
+
+        .social {
+            z-index:2;
+            width: 30px;
+            position: fixed;
+            right: $basePadding;
+            top: 55px;
+            transition: .5s right;
+            .Icon {
+                margin-bottom: $baseMargin;
+                > svg {
+                    width: 30px!important;
+                    height: 30px!important;
+                }
+            }
+            @media (max-width: $small) {
+                right: -50px;
+                width: 40px;
+                top: 80px;
+                .Icon {
+                    > svg {
+                        width: 40px!important;
+                        height: 40px!important;
+                    }
+                }
+
+            }
+        }
+    }
+    &.open {
+        @media (max-width: $xsmall) {
+            .content {
+                .logo {
+                    width: 100px;
+                    margin-top: $baseMargin;
+                }
+            }
+        }
+        .social {
+            right: $basePadding*2;
+
+        }
+    }
+    &.offtop {
+        .content {
+            .logo {
+                width: 100px;
+                margin-top: $baseMargin;
+            }
+        }
+    }
+
+
+
+}

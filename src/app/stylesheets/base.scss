@@ -1,0 +1,98 @@
+html {
+    font-family: 'Oswald', sans-serif;
+    font-size: 62.5%;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+html,body {
+    min-width: $minPageWidth;
+    /*
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    */
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1.6rem;
+    //line-height: 0;
+    font-weight: 400;
+    color: $text;
+}
+
+a {
+    color: $blue;
+    cursor: pointer;
+    * {
+        cursor: pointer;
+    }
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 5rem;
+    line-height: 6rem;
+    color: $blue;
+    padding: 0;
+    margin: $baseMargin*2 0;
+}
+
+h3 {
+    font-weight: 300;
+    font-size: 3.6rem;
+    line-height: 5.3rem;
+    text-shadow: 0px 2px 4px rgba(0,0,0,.20);
+    color: $blue;
+    padding: 0;
+    margin: $baseMargin 0;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    color: $text;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    font-weight: 300;
+    &.header {
+        font-weight: 500;
+        margin-top: 0;
+    }
+}
+
+input[type=text], textarea, button, select {
+    border: 1px solid transparent;
+    background: rgba(255,255,255,.5);
+    outline: none;
+    width: 100%;
+    color: black;
+    padding: $basePadding/2;
+    border-radius: 2px;
+    transition: all .5s;
+    line-height: 1em;
+    height: 30px;
+    &:focus {
+        background: rgba(255,255,255,.65);
+    }
+}
+textarea {
+    height: 192px;
+}
+
+button, button:focus {
+    margin: $baseMargin 0;
+    background: $blue;
+    color: white;
+    padding: 0 $basePadding;
+    cursor: pointer!important;
+    &:hover {
+        box-shadow: 0 5px 30px rgba(255,255,255,.15) inset;
+    }
+}

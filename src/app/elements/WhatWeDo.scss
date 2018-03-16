@@ -1,0 +1,26 @@
+@import '../stylesheets/variables';
+
+.wwd_line {
+    width: 100vw;
+    height: $baseMargin*3;
+    margin: $baseMargin*2 0;
+
+    &.government_affairs {
+        background-color: $yellow;
+    }
+    &.political_consulting {
+        background-color: $blue;
+    }
+    &.grassroots {
+        background-color: $green;
+    }
+    &.issue_development {
+        background-color: $orange;
+    }
+    &.network_development {
+        background-color: $purple;
+    }
+    &.public_affairs {
+        background-color: $red;
+    }
+}

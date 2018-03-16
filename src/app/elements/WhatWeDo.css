@@ -1,0 +1,16 @@
+.wwd_line {
+  width: 100vw;
+  height: 30px;
+  margin: 20px 0; }
+  .wwd_line.government_affairs {
+    background-color: #f9e319; }
+  .wwd_line.political_consulting {
+    background-color: #1b4d6b; }
+  .wwd_line.grassroots {
+    background-color: #8cd43d; }
+  .wwd_line.issue_development {
+    background-color: #f5a623; }
+  .wwd_line.network_development {
+    background-color: #9013fe; }
+  .wwd_line.public_affairs {
+    background-color: #d0021b; }

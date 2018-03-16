@@ -1,0 +1,53 @@
+.animated_objects {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    .light1, .light2 {
+        position: absolute;
+        top: -100vh;
+        transition: 1s top;
+        height: 70vh;
+        transform-origin: 0% 0%;
+        animation: droplightForward;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+        &.revealed {
+            top: -10vh;
+        }
+    }
+    .light1 {
+        right: 10%;
+        @media ($xsmall) {
+            height: 80vh;
+            &.revealed {
+                top: -10vh;
+            }
+        }
+    }
+    .light2 {
+        left: 10%;
+        animation: droplightReverse;
+        animation-duration: 4.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+        @media ($xsmall) {
+            display: none;
+        }
+    }
+}
+
+
+@keyframes droplightForward {
+    0% { transform: rotate3d(0,0,1, -5deg); }
+    100% { transform: rotate3d(0,0,1, 5deg); }
+}
+@keyframes droplightReverse {
+    0% { transform: rotate3d(0,0,1, 5deg); }
+    100% { transform: rotate3d(0,0,1, -5deg); }
+}

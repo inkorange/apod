@@ -1,0 +1,98 @@
+@import '../stylesheets/variables';
+
+.panel_container {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: $baseMargin*6;
+}
+.VerticalPanel {
+    position: relative;
+    width: calc(33.32% - 7px);
+    margin-right: $baseMargin;
+    margin-bottom: $baseMargin;
+    background-color: rgba(0,0,0,.1);
+    border-top: solid 9px transparent;
+    box-shadow: 0 1px 4px rgba(0,0,0,.15);
+    cursor: pointer;
+    text-decoration: none;
+    &:hover, &:active {
+        text-decoration: none;
+        cursor: pointer!important;
+    }
+    &:nth-child(3n) {
+        margin-right: 0;
+    }
+    @media (max-width: $small) {
+        width: calc(50% - #{$baseMargin/2});
+        &:nth-child(3n) {
+            margin-right: $baseMargin;
+        }
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+    }
+    @media (max-width: $xsmall) {
+        width: 100%;
+        margin-right: 0!important;
+    }
+
+    &.GovernmentAffairs {
+        border-top-color: $yellow;
+    }
+    &.PoliticalConsulting {
+        border-top-color: $blue;
+    }
+    &.GrassrootsAdvocacy {
+        border-top-color: $green;
+    }
+    &.IssueDevelopment {
+        border-top-color: $orange;
+    }
+    &.NetworkDevelopment {
+        border-top-color: $purple;
+    }
+    &.PublicAffairs {
+        border-top-color: $red;
+    }
+    > img {
+        position: absolute;
+        top: $baseMargin;
+        right: $baseMargin;
+        width: 53px;
+    }
+    header {
+        font-size: 2rem;
+        line-height: 48px;
+        background: white;
+        padding: 0 $basePadding*2;
+    }
+
+    div {
+        font-size: 1.6rem;
+        color: black;
+        padding: $basePadding*2;
+        overflow: hidden;
+        > p {
+            margin: 0 0 $baseMargin*2 0;
+            width: 75%;
+
+        }
+        > span {
+            position: absolute;
+            right: $basePadding*2;
+            bottom: $basePadding*2;
+            text-transform: uppercase;
+            text-decoration: none;
+            &:before {
+                position: absolute;
+                top: 4px;
+                left: -13px;
+                width: 9px;
+                height: 9px;
+                border: solid 7px $blue;
+                border-color: transparent transparent transparent $blue;
+                content: '';
+            }
+        }
+    }
+}

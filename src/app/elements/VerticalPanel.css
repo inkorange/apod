@@ -1,0 +1,76 @@
+.panel_container {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 60px; }
+
+.VerticalPanel {
+  position: relative;
+  width: calc(33.32% - 7px);
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-top: solid 9px transparent;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  text-decoration: none; }
+  .VerticalPanel:hover, .VerticalPanel:active {
+    text-decoration: none;
+    cursor: pointer !important; }
+  .VerticalPanel:nth-child(3n) {
+    margin-right: 0; }
+  @media (max-width: 740px) {
+    .VerticalPanel {
+      width: calc(50% - 5px); }
+      .VerticalPanel:nth-child(3n) {
+        margin-right: 10px; }
+      .VerticalPanel:nth-child(2n) {
+        margin-right: 0; } }
+  @media (max-width: 415px) {
+    .VerticalPanel {
+      width: 100%;
+      margin-right: 0 !important; } }
+  .VerticalPanel.GovernmentAffairs {
+    border-top-color: #f9e319; }
+  .VerticalPanel.PoliticalConsulting {
+    border-top-color: #1b4d6b; }
+  .VerticalPanel.GrassrootsAdvocacy {
+    border-top-color: #8cd43d; }
+  .VerticalPanel.IssueDevelopment {
+    border-top-color: #f5a623; }
+  .VerticalPanel.NetworkDevelopment {
+    border-top-color: #9013fe; }
+  .VerticalPanel.PublicAffairs {
+    border-top-color: #d0021b; }
+  .VerticalPanel > img {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 53px; }
+  .VerticalPanel header {
+    font-size: 2rem;
+    line-height: 48px;
+    background: white;
+    padding: 0 20px; }
+  .VerticalPanel div {
+    font-size: 1.6rem;
+    color: black;
+    padding: 20px;
+    overflow: hidden; }
+    .VerticalPanel div > p {
+      margin: 0 0 20px 0;
+      width: 75%; }
+    .VerticalPanel div > span {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      text-transform: uppercase;
+      text-decoration: none; }
+      .VerticalPanel div > span:before {
+        position: absolute;
+        top: 4px;
+        left: -13px;
+        width: 9px;
+        height: 9px;
+        border: solid 7px #1b4d6b;
+        border-color: transparent transparent transparent #1b4d6b;
+        content: ''; }

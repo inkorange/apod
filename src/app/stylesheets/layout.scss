@@ -1,0 +1,367 @@
+body {
+    background-color: white;
+}
+
+.isFF {
+    * {
+        -moz-transform-style: flat!important;
+        transform-style: flat!important;
+    }
+}
+
+.MainContent {
+    position: relative;
+    > article, > header, > footer {
+        > .container {
+            position: relative;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align:center;
+            .transitional {
+                position: absolute;
+                right: 0;
+                left: 0;
+                > img {
+                    position: relative;
+                    top: -50%;
+                    left: 0;
+                    transform: translateY(-49%);
+                    width: 100%;
+                    margin: 0 auto;
+                }
+            }
+
+            .followMe {
+                position: absolute;
+                right: 5vw;
+                bottom: 10vw;
+                width: 10vw;
+                height: 10vw;
+                max-width: 50px;
+                max-height: 50px;
+                z-index: 5;
+                opacity: 1;
+                transition: .5s opacity;
+                &.hideit {
+                    opacity: 0;
+                }
+                > .Icon {
+                    position: absolute;
+                    width: 100%;
+                    animation-name: arrowDown;
+                    animation-duration: 1.25s;
+                    animation-iteration-count: infinite;
+                }
+            }
+            @keyframes arrowDown {
+                0% {top: 0px; opacity: 0; }
+                100% {top: 20px; opacity: 1;}
+            }
+            &.fullpage {
+                min-height: 100vh;
+                @media (max-height: $xsmallH) {
+                    height: auto;
+                    min-height: 100vh;
+                }
+            }
+            .content {
+                position: relative;
+                text-align: left;
+                width: 100%;
+                max-width: $maxPageWidth;
+                min-width: $minPageWidth;
+                padding: $basePadding*5 $basePadding*2;
+                @media (max-width: $small) {
+                    padding: $basePadding*4 $basePadding*2;
+                }
+                //transform: translateZ(0);
+                margin: 0 auto;
+                > h1 {
+                    margin-top: 22.5vh;
+                    @media (max-width: $xsmall) {
+                        margin-top: 15vh;
+                    }
+                }
+                > h3 {
+                    line-height: 4rem;
+                }
+                .quote {
+                    background: black;
+                    padding: $basePadding*4;
+                    position: absolute;
+                    top: 0;
+                    left: $basePadding*2;
+                    //margin-top: -$baseMargin*5;
+                    width: calc(37.5% - #{$basePadding*8});
+                    @media (max-width: $small) {
+                        position: static;
+                        padding: $basePadding*2;
+                        width: 100%;
+                        margin-top: -$baseMargin*7;
+                    }
+                    p {
+                        color: white;
+                        text-shadow: none;
+                        font-size: 2.4rem;
+                        line-height: 2.9rem;
+                        font-weight: 100;
+                        margin: 0 0 $basePadding*2 0;
+                        @media (max-width: $small) {
+                            font-size: 2rem;
+                            line-height: 2.8rem;
+                        }
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+                        &.right_align {
+                            text-align: right;
+                        }
+                    }
+                }
+                .team_panels {
+                    display: flex;
+                    flex-flow: row wrap;
+                    margin-top: $baseMargin*6;
+                    @media (max-width: $xsmall) {
+                        margin-bottom: $baseMargin*8;
+                    }
+                    > a {
+                        display: block;
+                        position: relative;
+                        width: calc(33.32% - #{$baseMargin*.667});
+                        margin-right: $baseMargin;
+                        margin-bottom: $baseMargin;
+                        padding: $basePadding;
+                        background-color: black;
+                        height: 350px;
+                        background-position: center top;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        box-shadow: 0 -140px 150px -20px black inset;
+                        transition: .5s all;
+                        @media (max-width: $xsmall) {
+                            width: 100%;
+                            margin-right: 0;
+                            margin-bottom: $baseMargin*2;
+                        }
+                        &:hover {
+                            cursor: pointer;
+                            box-shadow: 0 -100px 100px -20px black inset;
+                        }
+                        &:nth-child(3n) {
+                            margin-right: 0;
+                        }
+                        > div {
+                            position: absolute;
+                            bottom: $basePadding;
+                            left: $basePadding;
+                            right: $basePadding;
+                            h3, p {
+                                margin: 0;
+                                color: white;
+                                text-shadow: 0 1px 0px rgba(0,0,0,.75);
+                                line-height: 3.4rem;
+                            }
+                            p {
+                                min-height: 3em;
+                            }
+                        }
+                        &.bill {
+                            background-image: url('/images/bill_hs.jpg');
+                        }
+                        &.dave {
+                            background-image: url('/images/feidt_hs.jpg');
+                        }
+                        &.alicia {
+                            background-image: url('/images/alicia_hs.jpg');
+                        }
+                    }
+                }
+                &.our_team {
+                    > div {
+                        margin-top: $baseMargin*5;
+                        &:first-of-type {
+                            margin-top: 0;
+                            h3 {
+                                margin-top: 0;
+                            }
+                        }
+                    }
+                    .headshot {
+                        margin-left: calc(33% - 150px);
+                        position: absolute;
+                        left: -200px;
+                        top: $baseMargin*2;
+                        width: 150px;
+                        height: 150px;
+                        border-radius: 50%;
+                        background-color: black;
+                        background-size: cover;
+                        box-shadow: 0 0 3px rgba(0,0,0,.5);
+                        &.Thomas {
+                            background-image: url('/images/bill_hs.jpg');
+                        }
+                        &.Feidt {
+                            background-image: url('/images/feidt_hs.jpg');
+                        }
+                        &.Alicia {
+                            background-image: url('/images/alicia_hs.jpg');
+                        }
+                        @media (max-width: $small) {
+                            position: static;
+                            float: right;
+                            margin: $baseMargin 0 $baseMargin $baseMargin;
+                        }
+                    }
+                }
+            }
+            .image_panel {
+                height: 350px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-color: black;
+                position: relative;
+                * {
+                    color: white;
+                    margin-bottom : 0;
+                }
+                &.how_we_operate {
+                    background-position: left center;
+                    background-image: url('/images/HowWeOperate.jpg');
+                }
+                .bottom {
+                    margin-left: 50%;
+                    transform: translateX(-50%);
+                    position: absolute;
+                    bottom: 0;
+                }
+            }
+            > .transitional + .content {
+                > div {
+                    padding-top: 20vh;
+                    @media (max-width: $small) {
+                        padding-top: 5vh;
+                    }
+                }
+            }
+            &.how_we_operate {
+                .content {
+                    h3 {
+                        margin-top: 0;
+                        @media (max-width: $small) {
+                            margin-top: $baseMargin*2;
+                        }
+                    }
+                }
+            }
+            &.who_we_are {
+                background-image: url('/images/whoweare.jpg');
+                h3, p {
+                    color: white;
+                    text-shadow: none;
+                }
+            }
+            &.panel1 {
+                background-attachment: fixed;
+                background-image: url('/images/homepage.jpg');
+            }
+            &.govtaffairs {
+                overflow-x: hidden;
+                background-attachment: fixed;
+                background-image: url('/images/govtaffairs.jpg');
+            }
+            &.politicalconsult {
+                overflow-x: hidden;
+                background-attachment: fixed;
+                background-image: url('/images/politicalconsult.jpg');
+            }
+            &.issuedev {
+                overflow-x: hidden;
+                background-attachment: fixed;
+                background-image: url('/images/capital.jpg');
+            }
+            &.grassroots {
+                overflow-x: hidden;
+                background-attachment: fixed;
+                background-image: url('/images/grassroots.jpg');
+            }
+            &.network {
+                overflow-x: hidden;
+                background-attachment: fixed;
+                background-image: url('/images/networkdev.jpg');
+            }
+            &.publicaffairs {
+                overflow-x: hidden;
+                background-attachment: fixed;
+                background-image: url('/images/publicaffairs.jpg');
+            }
+            .background_fader {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: white;
+            }
+        }
+    }
+
+    // grid spacing.
+
+    .left-1 {
+        margin-left: 12.5%;
+    }
+    .left-2 {
+        margin-left: 25%;
+    }
+    .left-3 {
+        margin-left: 37.5%;
+    }
+    .left-4 {
+        margin-left: 50%;
+    }
+    .left-5 {
+        margin-left: 62.5%;
+    }
+
+    .width-3 {
+        width: 37.5%;
+    }
+    .width-4 {
+        width: 50%;
+    }
+    .width-5 {
+        width: 62.5%;
+    }
+    .width-6 {
+        width: 75%;
+    }
+    @media (max-width: $small) {
+        .left-1, .left-2, .left-3, .left-4, .left-5 {
+            margin-left: 12.5%;
+        }
+        .width-3, .width-4, .width-5 {
+            width: 75%;
+        }
+    }
+    @media (max-width: $xsmall) {
+        .left-1, .left-2, .left-3, .left-4, .left-5 {
+            margin-left: 0;
+        }
+        .width-3, .width-4, .width-5, .width-6 {
+            width: 100%;
+        }
+    }
+
+    &.isMobileSafari {
+        .container {
+            &.panel1, &.govtaffairs, &.politicalconsult, &.issuedev, &.grassroots, &.network, &.publicaffairs {
+                background-attachment: scroll;
+            }
+        }
+    }
+}
+
+

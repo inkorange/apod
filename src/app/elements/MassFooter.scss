@@ -1,0 +1,143 @@
+@import '../stylesheets/variables';
+
+.AppFooter {
+    margin-top: -20vh;
+
+    @media (max-width: $xsmall) {
+        margin-top: -10vh;
+    }
+    .contact_image {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    section {
+        background: black;
+        margin-top: -100px;
+        padding: $basePadding*2;
+        padding-bottom: $basePadding*5;
+        @media (max-width: $xsmall) {
+            margin-top: -60px;
+        }
+        .content {
+            padding: 0 !important;
+            max-width: $maxPageWidth;
+            position: relative;
+            margin: 0 auto;
+            h3, p, a {
+                text-align: center;
+                color: white;
+                text-shadow: none;
+            }
+            .contact_form {
+                overflow: hidden;
+                max-width: 90%;
+                margin: $baseMargin auto $baseMargin*5 auto;
+                position: relative;
+                > div {
+                    width: 49%;
+                    padding: 0 1%;
+                    float: left;
+                    @media (max-width: $xsmall) {
+                        width: 100%;
+                        float: none;
+                    }
+                    label {
+                        font-size: 1.2rem;
+                        clear: both;
+                        display: block;
+                        line-height: 2.4rem;
+                        color: white;
+                        span {
+                            float: right;
+                            font-weight: 200;
+                            font-style: italic;
+                        }
+                    }
+
+                }
+                .form_2column {
+                    overflow: hidden;
+                    > div {
+                        width: 50%;
+                        float: left;
+                    }
+                }
+                label {
+                    &.error {
+                        color: $red;
+                    }
+                }
+                input, select, textarea {
+                    &.error {
+                        border-color: $red;
+                    }
+                }
+                &:after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    content: '';
+                    background: rgba(0,0,0,.5);
+                    opacity: 0;
+                    z-index: 2;
+                    visibility: hidden;
+                    transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+                }
+                &.loading {
+                    &:after {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                    .sending_message {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+                .sending_message {
+                    z-index: 3;
+                    position: absolute;
+                    padding: $basePadding $basePadding*4;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    background: rgba(255,255,255,.8);
+                    color: $blue;
+                    opacity: 0;
+                    text-align: center;
+                    visibility: hidden;
+                    transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+                    border-radius: 2px;
+                }
+            }
+            .social {
+                text-align: center;
+                .Icon {
+                    margin: $baseMargin;
+                }
+            }
+        }
+    }
+    .eng_by {
+        background: black;
+        text-align: center;
+        font-weight: 200;
+        font-size: 1.2rem;
+        padding: $basePadding*2;
+        img {
+            width: 17px;
+            position: relative;
+            top: 3px;
+            margin-right: $basePadding;
+            opacity: .5;
+        }
+        a {
+            color: white;
+            opacity: .5;
+            text-decoration: none;
+
+        }
+    }
+}

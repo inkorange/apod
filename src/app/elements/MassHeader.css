@@ -1,0 +1,156 @@
+.AppHeader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100; }
+  @media (max-width: 740px) {
+    .AppHeader {
+      height: 44px; } }
+  .AppHeader:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 44px;
+    background-color: #1b4d6b;
+    border-bottom: 4px solid #f9e319;
+    content: '';
+    transition: .4s box-shadow;
+    box-shadow: 0 0 0 0 transparent; }
+  .AppHeader.open:before {
+    box-shadow: 0 0 2000px 500px rgba(0, 0, 0, 0.65); }
+  .AppHeader .content {
+    max-width: 900px;
+    position: relative;
+    margin: 0 auto;
+    z-index: 2; }
+    .AppHeader .content .logo {
+      position: absolute;
+      width: 165px;
+      margin-top: 20px;
+      margin-left: 10px;
+      transition: .5s all;
+      padding-left: 10px; }
+      @media (max-height: 400px) {
+        .AppHeader .content .logo {
+          width: 125px; } }
+      .AppHeader .content .logo img {
+        width: 100%;
+        z-index: 2;
+        position: relative; }
+      .AppHeader .content .logo:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 10px;
+        height: 81.25%;
+        background: rgba(255, 255, 255, 0.6);
+        box-shadow: 0px 60px 100px 0 white inset;
+        z-index: 1; }
+    .AppHeader .content .tagline {
+      padding: 0;
+      margin: 0;
+      font-size: 1.4rem;
+      color: #1b4d6b;
+      text-transform: uppercase; }
+    .AppHeader .content ul {
+      float: right;
+      list-style: none;
+      line-height: 40px;
+      padding: 0;
+      margin: 0 10px 0 0; }
+      .AppHeader .content ul li {
+        padding: 0 10px;
+        display: inline-block;
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 300; }
+        .AppHeader .content ul li a {
+          color: white;
+          text-decoration: none; }
+      @media (max-width: 740px) {
+        .AppHeader .content ul {
+          display: none;
+          margin: 0; } }
+      @media (max-width: 740px) {
+        .AppHeader .content ul {
+          transition: .5s all;
+          display: block;
+          background: #1E2F3A;
+          width: calc(100vw - 200px);
+          padding: 0 20px 20px 20px;
+          z-index: 1; }
+          .AppHeader .content ul li {
+            display: block;
+            text-align: right;
+            border-bottom: 1px solid white;
+            margin: 0 60px 0 0;
+            padding: 10px; }
+          .AppHeader .content ul.open {
+            margin-top: 44px;
+            margin-right: 0%; }
+          .AppHeader .content ul.closed {
+            margin-top: 44px;
+            margin-right: -100%; } }
+        @media (max-width: 740px) and (max-width: 415px) {
+          .AppHeader .content ul {
+            width: 100vw; } }
+    .AppHeader .content .Menu {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      display: none; }
+      @media (max-width: 740px) {
+        .AppHeader .content .Menu {
+          display: block; } }
+      .AppHeader .content .Menu > img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        transition: all .75s; }
+        .AppHeader .content .Menu > img[data-name='menu'] {
+          opacity: 1; }
+        .AppHeader .content .Menu > img[data-name='close'] {
+          opacity: 0;
+          box-shadow: none;
+          background-color: transparent; }
+      .AppHeader .content .Menu.open img {
+        transform: rotateZ(270deg); }
+        .AppHeader .content .Menu.open img[data-name='close'] {
+          opacity: 1; }
+        .AppHeader .content .Menu.open img[data-name='menu'] {
+          opacity: 0; }
+    .AppHeader .content .social {
+      z-index: 2;
+      width: 30px;
+      position: fixed;
+      right: 10px;
+      top: 55px;
+      transition: .5s right; }
+      .AppHeader .content .social .Icon {
+        margin-bottom: 10px; }
+        .AppHeader .content .social .Icon > svg {
+          width: 30px !important;
+          height: 30px !important; }
+      @media (max-width: 740px) {
+        .AppHeader .content .social {
+          right: -50px;
+          width: 40px;
+          top: 80px; }
+          .AppHeader .content .social .Icon > svg {
+            width: 40px !important;
+            height: 40px !important; } }
+  @media (max-width: 415px) {
+    .AppHeader.open .content .logo {
+      width: 100px;
+      margin-top: 10px; } }
+  .AppHeader.open .social {
+    right: 20px; }
+  .AppHeader.offtop .content .logo {
+    width: 100px;
+    margin-top: 10px; }

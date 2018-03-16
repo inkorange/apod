@@ -1,0 +1,110 @@
+.AppFooter {
+  margin-top: -20vh; }
+  @media (max-width: 415px) {
+    .AppFooter {
+      margin-top: -10vh; } }
+  .AppFooter .contact_image {
+    width: 100%;
+    margin: 0;
+    padding: 0; }
+  .AppFooter section {
+    background: black;
+    margin-top: -100px;
+    padding: 20px;
+    padding-bottom: 50px; }
+    @media (max-width: 415px) {
+      .AppFooter section {
+        margin-top: -60px; } }
+    .AppFooter section .content {
+      padding: 0 !important;
+      max-width: 900px;
+      position: relative;
+      margin: 0 auto; }
+      .AppFooter section .content h3, .AppFooter section .content p, .AppFooter section .content a {
+        text-align: center;
+        color: white;
+        text-shadow: none; }
+      .AppFooter section .content .contact_form {
+        overflow: hidden;
+        max-width: 90%;
+        margin: 10px auto 50px auto;
+        position: relative; }
+        .AppFooter section .content .contact_form > div {
+          width: 49%;
+          padding: 0 1%;
+          float: left; }
+          @media (max-width: 415px) {
+            .AppFooter section .content .contact_form > div {
+              width: 100%;
+              float: none; } }
+          .AppFooter section .content .contact_form > div label {
+            font-size: 1.2rem;
+            clear: both;
+            display: block;
+            line-height: 2.4rem;
+            color: white; }
+            .AppFooter section .content .contact_form > div label span {
+              float: right;
+              font-weight: 200;
+              font-style: italic; }
+        .AppFooter section .content .contact_form .form_2column {
+          overflow: hidden; }
+          .AppFooter section .content .contact_form .form_2column > div {
+            width: 50%;
+            float: left; }
+        .AppFooter section .content .contact_form label.error {
+          color: #d0021b; }
+        .AppFooter section .content .contact_form input.error, .AppFooter section .content .contact_form select.error, .AppFooter section .content .contact_form textarea.error {
+          border-color: #d0021b; }
+        .AppFooter section .content .contact_form:after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          content: '';
+          background: rgba(0, 0, 0, 0.5);
+          opacity: 0;
+          z-index: 2;
+          visibility: hidden;
+          transition: visibility 0s linear 0.5s,opacity 0.5s linear; }
+        .AppFooter section .content .contact_form.loading:after {
+          visibility: visible;
+          opacity: 1; }
+        .AppFooter section .content .contact_form.loading .sending_message {
+          visibility: visible;
+          opacity: 1; }
+        .AppFooter section .content .contact_form .sending_message {
+          z-index: 3;
+          position: absolute;
+          padding: 10px 40px;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          background: rgba(255, 255, 255, 0.8);
+          color: #1b4d6b;
+          opacity: 0;
+          text-align: center;
+          visibility: hidden;
+          transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+          border-radius: 2px; }
+      .AppFooter section .content .social {
+        text-align: center; }
+        .AppFooter section .content .social .Icon {
+          margin: 10px; }
+  .AppFooter .eng_by {
+    background: black;
+    text-align: center;
+    font-weight: 200;
+    font-size: 1.2rem;
+    padding: 20px; }
+    .AppFooter .eng_by img {
+      width: 17px;
+      position: relative;
+      top: 3px;
+      margin-right: 10px;
+      opacity: .5; }
+    .AppFooter .eng_by a {
+      color: white;
+      opacity: .5;
+      text-decoration: none; }
